@@ -47,7 +47,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/add-a-new-column.html"><h3 class="article-title">Add-A-New-Column</h3></a>
-<h6 class="subheader" title="2026-01-03T00:00:00-05:00">Sat 03 January 2026
+<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
 </h6>
 
 
@@ -194,7 +194,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/addition.html"><h3 class="article-title">Addition</h3></a>
-<h6 class="subheader" title="2026-01-03T00:00:00-05:00">Sat 03 January 2026
+<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
 </h6>
 
 
@@ -228,7 +228,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/age-calculator.html"><h3 class="article-title">Age-Calculator</h3></a>
-<h6 class="subheader" title="2026-01-03T00:00:00-05:00">Sat 03 January 2026
+<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
 </h6>
 
 
@@ -270,8 +270,61 @@
 
 
             <article>
+                <a href="https://shankartce.github.io/pynotes/cricket-match.html"><h3 class="article-title">Cricket Match</h3></a>
+<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1"># pylint: disable=missing-function-docstring, pointless-string-statement, missing-class-docstring</span>
+
+<span class="c1">#Gonna try this using the game of chess</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">@author: Shankar P</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">canadian_player_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Akhil Kumar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Jaskaran Singh&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Shreyas Movva&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Saad Bin Zafar&quot;</span>
+<span class="p">]</span>
+
+<span class="n">australian_player_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Tim David&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Cummins&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Green&quot;</span>
+<span class="p">]</span>
+
+<span class="n">team_a_name</span> <span class="o">=</span> <span class="s2">&quot;Canada&quot;</span>
+<span class="n">team_b_name</span> <span class="o">=</span> <span class="s2">&quot;Australia&quot;</span>
+
+<span class="c1"># Cricket Constants</span>
+<span class="n">SLEEP_GAP_SECONDS</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">OVERS_PER_INNINGS</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_random_player_name</span><span class="p">():</span>
+
+    <span class="k">return</span> <span class="n">random …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-cricket.html">python-cricket</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/cricket-match.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://shankartce.github.io/pynotes/multiply.html"><h3 class="article-title">Multiply</h3></a>
-<h6 class="subheader" title="2026-01-03T00:00:00-05:00">Sat 03 January 2026
+<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
 </h6>
 
 
@@ -297,6 +350,44 @@
 
 
                 <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/multiply.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://shankartce.github.io/pynotes/python-type-hints.html"><h3 class="article-title">Python Type Hints</h3></a>
+<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sum_of_integers</span><span class="p">(</span><span class="n">numbers</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_integers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>  <span class="c1"># Output: 6</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">6</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello, Guest!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">())</span>           <span class="c1"># Output: Hello, Guest!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">))</span>    <span class="c1"># Output …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/typing-module.html">Typing Module</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/python-type-hints.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
@@ -326,6 +417,8 @@
             <li><a href="https://shankartce.github.io/pynotes/category/basics.html">basics</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/localmath.html">localmath</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/python-cricket.html">python-cricket</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/typing-module.html">Typing Module</a></li>
    
         </ul>
 
