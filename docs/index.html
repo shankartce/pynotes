@@ -47,7 +47,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/addition.html"><h3 class="article-title">Addition</h3></a>
-<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
+<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
 </h6>
 
 
@@ -83,7 +83,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/asynchronous-programming.html"><h3 class="article-title">Asynchronous Programming</h3></a>
-<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
+<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
 </h6>
 
 
@@ -126,7 +126,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/cricket-match.html"><h3 class="article-title">Cricket Match</h3></a>
-<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
+<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
 </h6>
 
 
@@ -178,8 +178,91 @@ Goodbye, World!
 
 
             <article>
+                <a href="https://shankartce.github.io/pynotes/data-classes.html"><h3 class="article-title">Data Classes</h3></a>
+<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>  <span class="c1"># Output: Person(name=&#39;Alice&#39;, age=30)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Person(name=&#39;Alice&#39;, age=30)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="p">:</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">9.99</span>
+
+<span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Python 101 …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/data-classes.html">Data Classes</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/data-classes.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://shankartce.github.io/pynotes/descriptor-protocols.html"><h3 class="article-title">Descriptor Protocols</h3></a>
+<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Descriptor</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">owner</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting value&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="n">_value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Setting value&quot;</span><span class="p">)</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
+    <span class="n">attribute</span> <span class="o">=</span> <span class="n">Descriptor</span><span class="p">()</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1"># Setting value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">attribute</span><span class="p">)</span>  <span class="c1"># Getting value, Output: 42</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Setting value
+Getting value
+42
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ReadOnlyDescriptor</span><span class="p">:</span>
+    <span class="k">def …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/descriptor-protocols.html">Descriptor Protocols</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/descriptor-protocols.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://shankartce.github.io/pynotes/multiply.html"><h3 class="article-title">Multiply</h3></a>
-<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
+<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
 </h6>
 
 
@@ -213,7 +296,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/python-type-hints.html"><h3 class="article-title">Python Type Hints</h3></a>
-<h6 class="subheader" title="2026-01-08T00:00:00-05:00">Thu 08 January 2026
+<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
 </h6>
 
 
@@ -270,6 +353,8 @@ Goodbye, World!
         <h5 class="sidebar-title">Categories</h5>
         <ul class="side-nav">
             <li><a href="https://shankartce.github.io/pynotes/category/asychronous-programming.html">Asychronous Programming</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/data-classes.html">Data Classes</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/descriptor-protocols.html">Descriptor Protocols</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/localmath.html">localmath</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/python-cricket.html">python-cricket</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/typing-module.html">Typing Module</a></li>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Data Classes</title>
+
+    <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://shankartce.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://shankartce.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://shankartce.github.io/pynotes/data-classes.html" rel="bookmark"
+        title="Permalink to Data Classes">Data Classes</a></h3>
+    </header>
+
+<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>  <span class="c1"># Output: Person(name=&#39;Alice&#39;, age=30)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Person(name=&#39;Alice&#39;, age=30)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="p">:</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">9.99</span>
+
+<span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Python 101&quot;</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="s2">&quot;John Doe&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>  <span class="c1"># Output: Book(title=&#39;Python 101&#39;, author=&#39;John Doe&#39;, price=9.99)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Book(title=&#39;Python 101&#39;, author=&#39;John Doe&#39;, price=9.99)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="n">point</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>  <span class="c1"># Output: Point(x=3, y=4)</span>
+
+<span class="c1"># point.x = 5  # Raises error: FrozenInstanceError</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Point(x=3, y=4)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="n">width</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">area</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+
+<span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>  <span class="c1"># Output: 50.0</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">50</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Item</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="n">item1</span> <span class="o">=</span> <span class="n">Item</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">)</span>
+<span class="n">item2</span> <span class="o">=</span> <span class="n">Item</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">item1</span> <span class="o">==</span> <span class="n">item2</span><span class="p">)</span>  <span class="c1"># Output: True</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ShoppingCart</span><span class="p">:</span>
+    <span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="n">cart</span> <span class="o">=</span> <span class="n">ShoppingCart</span><span class="p">()</span>
+<span class="n">cart</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Apple&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cart</span><span class="p">)</span>  <span class="c1"># Output: ShoppingCart(items=[&#39;Apple&#39;])</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>ShoppingCart(items=[&#39;Apple&#39;])
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">:</span>
+    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">password</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;secret&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;User(username=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;)&quot;</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;john_doe&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>  <span class="c1"># Output: User(username=&#39;john_doe&#39;)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>User(username=&#39;john_doe&#39;)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Classroom</span><span class="p">:</span>
+    <span class="n">students</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">teacher</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">classroom</span> <span class="o">=</span> <span class="n">Classroom</span><span class="p">(</span><span class="n">students</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">],</span> <span class="n">teacher</span><span class="o">=</span><span class="s2">&quot;Mr. Smith&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classroom</span><span class="p">)</span>  <span class="c1"># Output: Classroom(students=[&#39;Alice&#39;, &#39;Bob&#39;], teacher=&#39;Mr. Smith&#39;)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Classroom(students=[&#39;Alice&#39;, &#39;Bob&#39;], teacher=&#39;Mr. Smith&#39;)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="n">breed</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Buddy&quot;</span><span class="p">,</span> <span class="n">breed</span><span class="o">=</span><span class="s2">&quot;Golden Retriever&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>  <span class="c1"># Output: Dog(name=&#39;Buddy&#39;, breed=&#39;Golden Retriever&#39;)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Dog(name=&#39;Buddy&#39;, breed=&#39;Golden Retriever&#39;)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">asdict</span><span class="p">,</span> <span class="n">astuple</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Employee</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">role</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">salary</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="n">employee</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="s2">&quot;Developer&quot;</span><span class="p">,</span> <span class="n">salary</span><span class="o">=</span><span class="mf">75000.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">asdict</span><span class="p">(</span><span class="n">employee</span><span class="p">))</span>  <span class="c1"># Output: {&#39;name&#39;: &#39;Alice&#39;, &#39;role&#39;: &#39;Developer&#39;, &#39;salary&#39;: 75000.0}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">astuple</span><span class="p">(</span><span class="n">employee</span><span class="p">))</span>  <span class="c1"># Output: (&#39;Alice&#39;, &#39;Developer&#39;, 75000.0)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;name&#39;: &#39;Alice&#39;, &#39;role&#39;: &#39;Developer&#39;, &#39;salary&#39;: 75000.0}
+(&#39;Alice&#39;, &#39;Developer&#39;, 75000.0)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 10</strong></p>
+<p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/data-classes.html">Data Classes</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://shankartce.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://shankartce.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://shankartce.github.io/pynotes/category/asychronous-programming.html">Asychronous Programming</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/data-classes.html">Data Classes</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/descriptor-protocols.html">Descriptor Protocols</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/localmath.html">localmath</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/python-cricket.html">python-cricket</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/typing-module.html">Typing Module</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/shankartce">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/shankarp369/">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by shankartce</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
