@@ -1,6 +1,6 @@
 ---
 title: Descriptor Protocols
-date: 2026-01-09
+date: 2026-03-02
 author: Your Name
 cell_count: 11
 score: 10
@@ -27,7 +27,7 @@ print(obj.attribute)  # Getting value, Output: 42
     Setting value
     Getting value
     42
-    
+
 
 
 ```python
@@ -47,7 +47,7 @@ print(obj.read_only)  # Output: This is a read-only attribute
 ```
 
     This is a read-only attribute
-    
+
 
 
 ```python
@@ -70,7 +70,7 @@ print(obj.number)  # Output: 10
 ```
 
     10
-    
+
 
 
 ```python
@@ -86,7 +86,7 @@ print(obj.attribute)  # Output: Non-data descriptor called
 ```
 
     Non-data descriptor called
-    
+
 
 
 ```python
@@ -101,7 +101,7 @@ print(MyClass.attribute)  # Output: Class-level descriptor
 ```
 
     Class-level descriptor
-    
+
 
 
 ```python
@@ -123,7 +123,7 @@ print(obj.attribute)  # Output: Hello
 
     Setting value to Hello
     Hello
-    
+
 
 
 ```python
@@ -145,7 +145,7 @@ print(obj.tracked)  # Output: Accessed 2 times
 
     Accessed 1 times
     Accessed 2 times
-    
+
 
 
 ```python
@@ -173,7 +173,7 @@ print(obj.attr1, obj.attr2)  # Output: Value 1 Value 2
     Setting attr1 to Value 1
     Setting attr2 to Value 2
     Value 1 Value 2
-    
+
 
 
 ```python
@@ -200,7 +200,7 @@ print(obj.logged_attr)
     Setting logged_attr to Testing
     Accessing logged_attr
     Testing
-    
+
 
 
 ```python
@@ -220,7 +220,7 @@ print(weather.temperature)  # Output: 77.0 (Fahrenheit)
 ```
 
     77.0
-    
+
 
 
 ```python

@@ -1,6 +1,6 @@
 ---
 title: Cricket Match
-date: 2026-01-09
+date: 2026-03-02
 author: Your Name
 cell_count: 2
 score: 0
@@ -171,7 +171,7 @@ if __name__ == "__main__":
     ------------------------------
     Australia Final Score: 33
     Canada wins
-    
+
 
 
 ```python

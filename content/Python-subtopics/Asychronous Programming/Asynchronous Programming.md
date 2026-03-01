@@ -1,6 +1,6 @@
 ---
 title: Asynchronous Programming
-date: 2026-01-09
+date: 2026-03-02
 author: Your Name
 cell_count: 11
 score: 10
@@ -19,7 +19,7 @@ await(say_hello())
 
     Hello, World!
     Goodbye, World!
-    
+
 
 
 ```python
@@ -45,7 +45,7 @@ await(main())
     Task 2 starting...
     Task 2 done!
     Task 1 done!
-    
+
 
 
 ```python
@@ -69,7 +69,7 @@ await(countdown(5))
     Counting down: 2
     Counting down: 1
     Countdown finished!
-    
+
 
 
 ```python
@@ -108,7 +108,7 @@ await(main())
     <!--[if lt IE 7]>   <html class="no-js ie6 lt-ie7 lt-ie8 lt-ie9">   <![endif]-->
     <!-...
     
-    
+
 
 
 ```python
@@ -147,7 +147,7 @@ await(main())
     Consuming 3
     Producing 4
     Consuming 4
-    
+
 
 
 ```python
@@ -168,7 +168,7 @@ await(main())
 ```
 
     Task timed out!
-    
+
 
 
 ```python
@@ -193,7 +193,7 @@ await(main())
 
     Hello, Async File I/O!
     
-    
+
 
 
 ```python
@@ -223,7 +223,7 @@ await(main())
     Task 3 done!
     Task 4 starting...
     Task 4 done!
-    
+
 
 
 ```python
@@ -251,7 +251,7 @@ await(main())
     Main task completed.
     Number: 3
     Number: 4
-    
+
 
 
 ```python
@@ -286,7 +286,7 @@ await(main())
     Consumer: got 3 from queue
     Producer: putting 4 in queue
     Consumer: got 4 from queue
-    
+
 
 
 ```python

@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Multiply</title>
+    <title>Context Managers</title>
 
     <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/normalize.css" />
     <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/foundation.min.css" />
@@ -44,31 +44,38 @@
     <div class="large-9 columns">
 <article>
     <header>
-        <h3 class="article-title"><a href="https://shankartce.github.io/pynotes/multiply.html" rel="bookmark"
-        title="Permalink to Multiply">Multiply</a></h3>
+        <h3 class="article-title"><a href="https://shankartce.github.io/pynotes/context-managers.html" rel="bookmark"
+        title="Permalink to Context Managers">Context Managers</a></h3>
     </header>
 
 <h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
-    <div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
 
-<div class="highlight"><pre><span></span><code><span class="n">c</span>
-</code></pre></div>
+<span class="nd">@contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">managed_resource</span><span class="p">(</span><span class="n">resource_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A custom context manager for handling a resource.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Acquiring resource: </span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">resource</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">resource_name</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;active&quot;</span><span class="p">}</span>
 
-<div class="highlight"><pre><span></span><code><span class="mf">21</span>
-</code></pre></div>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Hand the resource over to the &#39;with&#39; block</span>
+        <span class="k">yield</span> <span class="n">resource</span> 
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="c1"># This block always executes, even if an error occurs above</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Releasing resource: </span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;inactive&quot;</span>
 
-<div class="highlight"><pre><span></span><code>
+<span class="c1"># Using the custom context manager</span>
+<span class="k">with</span> <span class="n">managed_resource</span><span class="p">(</span><span class="s2">&quot;Database Connection&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Working with </span><span class="si">{</span><span class="n">db</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Status: </span><span class="si">{</span><span class="n">db</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <hr>
 <p><strong>Score: 0</strong></p>
-<p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/localmath.html">localmath</a>
+<p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
 
 </p>
 

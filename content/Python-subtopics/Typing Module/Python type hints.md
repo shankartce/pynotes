@@ -1,6 +1,6 @@
 ---
 title: Python Type Hints
-date: 2026-01-09
+date: 2026-03-02
 author: Your Name
 cell_count: 11
 score: 10
@@ -16,7 +16,7 @@ print(sum_of_integers([1, 2, 3]))  # Output: 6
 ```
 
     6
-    
+
 
 
 ```python
@@ -33,7 +33,7 @@ print(greet("Alice"))    # Output: Hello, Alice!
 
     Hello, Guest!
     Hello, Alice!
-    
+
 
 
 ```python
@@ -47,7 +47,7 @@ print(count_fruits(fruits))  # Output: 10
 ```
 
     10
-    
+
 
 
 ```python
@@ -64,7 +64,7 @@ print(square_or_length("test"))  # Output: 4
 
     16
     4
-    
+
 
 
 ```python
@@ -79,7 +79,7 @@ print(dot_product([1.0, 2.0], [3.0, 4.0]))  # Output: 11.0
 ```
 
     11.0
-    
+
 
 
 ```python
@@ -93,7 +93,7 @@ print(result)  # Output: 5
 ```
 
     5
-    
+
 
 
 ```python
@@ -107,7 +107,7 @@ print(process_coordinates((40.7128, -74.0060)))
 ```
 
     Latitude: 40.7128, Longitude: -74.006
-    
+
 
 
 ```python
@@ -122,7 +122,7 @@ print(stringify([1, 2, 3]))  # Output: '[1, 2, 3]'
 
     42
     [1, 2, 3]
-    
+
 
 
 ```python
@@ -135,7 +135,7 @@ print(choose_plan("premium"))  # Output: You selected the premium plan.
 ```
 
     You selected the premium plan.
-    
+
 
 
 ```python
@@ -155,7 +155,7 @@ print(display_user(user))
 ```
 
     Alice (30) can be reached at alice@example.com.
-    
+
 
 
 ```python

@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Multiply</title>
+    <title>Decorators</title>
 
     <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/normalize.css" />
     <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/foundation.min.css" />
@@ -44,31 +44,39 @@
     <div class="large-9 columns">
 <article>
     <header>
-        <h3 class="article-title"><a href="https://shankartce.github.io/pynotes/multiply.html" rel="bookmark"
-        title="Permalink to Multiply">Multiply</a></h3>
+        <h3 class="article-title"><a href="https://shankartce.github.io/pynotes/decorators.html" rel="bookmark"
+        title="Permalink to Decorators">Decorators</a></h3>
     </header>
 
 <h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
-    <div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
-<div class="highlight"><pre><span></span><code><span class="n">c</span>
-</code></pre></div>
+<span class="k">def</span><span class="w"> </span><span class="nf">timer_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A decorator that prints the execution time of the function.&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Function &#39;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; executed in </span><span class="si">{</span><span class="n">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
 
-<div class="highlight"><pre><span></span><code><span class="mf">21</span>
-</code></pre></div>
+<span class="nd">@timer_decorator</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">():</span>
+    <span class="c1"># Simulating a time-consuming task</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;Data processing complete.&quot;</span>
 
-<div class="highlight"><pre><span></span><code>
+<span class="c1"># Calling the decorated function</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">process_data</span><span class="p">())</span>
 </code></pre></div>
 
 <hr>
 <p><strong>Score: 0</strong></p>
-<p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/localmath.html">localmath</a>
+<p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
 
 </p>
 

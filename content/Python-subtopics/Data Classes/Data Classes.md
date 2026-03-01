@@ -1,6 +1,6 @@
 ---
 title: Data Classes
-date: 2026-01-09
+date: 2026-03-02
 author: Your Name
 cell_count: 11
 score: 10
@@ -19,7 +19,7 @@ print(person)  # Output: Person(name='Alice', age=30)
 ```
 
     Person(name='Alice', age=30)
-    
+
 
 
 ```python
@@ -36,7 +36,7 @@ print(book)  # Output: Book(title='Python 101', author='John Doe', price=9.99)
 ```
 
     Book(title='Python 101', author='John Doe', price=9.99)
-    
+
 
 
 ```python
@@ -54,7 +54,7 @@ print(point)  # Output: Point(x=3, y=4)
 ```
 
     Point(x=3, y=4)
-    
+
 
 
 ```python
@@ -74,7 +74,7 @@ print(rect.area)  # Output: 50.0
 ```
 
     50
-    
+
 
 
 ```python
@@ -92,7 +92,7 @@ print(item1 == item2)  # Output: True
 ```
 
     True
-    
+
 
 
 ```python
@@ -109,7 +109,7 @@ print(cart)  # Output: ShoppingCart(items=['Apple'])
 ```
 
     ShoppingCart(items=['Apple'])
-    
+
 
 
 ```python
@@ -128,7 +128,7 @@ print(user)  # Output: User(username='john_doe')
 ```
 
     User(username='john_doe')
-    
+
 
 
 ```python
@@ -145,7 +145,7 @@ print(classroom)  # Output: Classroom(students=['Alice', 'Bob'], teacher='Mr. Sm
 ```
 
     Classroom(students=['Alice', 'Bob'], teacher='Mr. Smith')
-    
+
 
 
 ```python
@@ -164,7 +164,7 @@ print(dog)  # Output: Dog(name='Buddy', breed='Golden Retriever')
 ```
 
     Dog(name='Buddy', breed='Golden Retriever')
-    
+
 
 
 ```python
@@ -183,7 +183,7 @@ print(astuple(employee))  # Output: ('Alice', 'Developer', 75000.0)
 
     {'name': 'Alice', 'role': 'Developer', 'salary': 75000.0}
     ('Alice', 'Developer', 75000.0)
-    
+
 
 
 ```python

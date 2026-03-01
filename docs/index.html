@@ -47,7 +47,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/addition.html"><h3 class="article-title">Addition</h3></a>
-<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
@@ -83,7 +83,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/asynchronous-programming.html"><h3 class="article-title">Asynchronous Programming</h3></a>
-<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
@@ -125,8 +125,40 @@ Goodbye, World!
 
 
             <article>
+                <a href="https://shankartce.github.io/pynotes/context-managers.html"><h3 class="article-title">Context Managers</h3></a>
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">managed_resource</span><span class="p">(</span><span class="n">resource_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A custom context manager for handling a resource.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Acquiring resource: </span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">resource</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">resource_name</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;active&quot;</span><span class="p">}</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Hand the resource over to the &#39;with&#39; block</span>
+        <span class="k">yield</span> <span class="n">resource</span> 
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="c1"># This block always executes, even if an error occurs above</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/context-managers.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://shankartce.github.io/pynotes/cricket-match.html"><h3 class="article-title">Cricket Match</h3></a>
-<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
@@ -179,7 +211,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/data-classes.html"><h3 class="article-title">Data Classes</h3></a>
-<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
@@ -219,8 +251,41 @@ Goodbye, World!
 
 
             <article>
+                <a href="https://shankartce.github.io/pynotes/decorators.html"><h3 class="article-title">Decorators</h3></a>
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">timer_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A decorator that prints the execution time of the function.&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Function &#39;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; executed in </span><span class="si">{</span><span class="n">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@timer_decorator</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">():</span>
+    <span class="c1"># Simulating a time-consuming …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/decorators.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://shankartce.github.io/pynotes/descriptor-protocols.html"><h3 class="article-title">Descriptor Protocols</h3></a>
-<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
@@ -261,8 +326,38 @@ Getting value
 
 
             <article>
+                <a href="https://shankartce.github.io/pynotes/generators.html"><h3 class="article-title">Generators</h3></a>
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci_generator</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates Fibonacci numbers up to a specified limit.&quot;&quot;&quot;</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">a</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Iterating through the generator</span>
+<span class="c1"># This uses very little memory, even if the limit was 1,000,000</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">fibonacci_generator …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/generators.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://shankartce.github.io/pynotes/multiply.html"><h3 class="article-title">Multiply</h3></a>
-<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
@@ -296,7 +391,7 @@ Getting value
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/python-type-hints.html"><h3 class="article-title">Python Type Hints</h3></a>
-<h6 class="subheader" title="2026-01-09T00:00:00-05:00">Fri 09 January 2026
+<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
 </h6>
 
 
@@ -356,6 +451,7 @@ Getting value
             <li><a href="https://shankartce.github.io/pynotes/category/data-classes.html">Data Classes</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/descriptor-protocols.html">Descriptor Protocols</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/localmath.html">localmath</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/python-cricket.html">python-cricket</a></li>
             <li><a href="https://shankartce.github.io/pynotes/category/typing-module.html">Typing Module</a></li>
    
