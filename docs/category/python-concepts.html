@@ -46,30 +46,30 @@
         
 
             <article>
-                <a href="https://shankartce.github.io/pynotes/context-managers.html"><h3 class="article-title">Context Managers</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+                <a href="https://shankartce.github.io/pynotes/arguments.html"><h3 class="article-title">Arguments</h3></a>
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">user_profile</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a user profile using unpacked arguments.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;User: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="nd">@contextmanager</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">managed_resource</span><span class="p">(</span><span class="n">resource_name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A custom context manager for handling a resource.&quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Acquiring resource: </span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">resource</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">resource_name</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;active&quot;</span><span class="p">}</span>
+    <span class="c1"># *args is treated as a tuple of positional arguments</span>
+    <span class="k">if</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Additional skills:&quot;</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
 
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Hand the resource over to the &#39;with&#39; block</span>
-        <span class="k">yield</span> <span class="n">resource</span> 
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="c1"># This block always executes, even if an error occurs above</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Releasing resource: </span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;inactive&quot;</span>
+    <span class="c1"># **kwargs is treated as a dictionary of keyword arguments</span>
+    <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="c1"># Using the custom context manager</span>
-<span class="k">with</span> <span class="n">managed_resource</span><span class="p">(</span><span class="s2">&quot;Database Connection&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Working with </span><span class="si">{</span><span class="n">db</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (Status: </span><span class="si">{</span><span class="n">db</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="c1"># Calling the function with a mix of arguments</span>
+<span class="n">user_profile</span><span class="p">(</span>
+    <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;SQL&quot;</span><span class="p">,</span> <span class="s2">&quot;Machine Learning&quot;</span><span class="p">,</span> <span class="c1"># These become *args</span>
+    <span class="n">location</span><span class="o">=</span><span class="s2">&quot;Madurai&quot;</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="s2">&quot;Data Engineer&quot;</span><span class="p">,</span> <span class="n">active</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># These become **kwargs</span>
+<span class="p">)</span>
 </code></pre></div>
 
 <hr>
@@ -89,8 +89,68 @@
 
 
             <article>
+                <a href="https://shankartce.github.io/pynotes/comprehensions.html"><h3 class="article-title">Comprehensions</h3></a>
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1"># The traditional way to square even numbers</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">squared_evens</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">squared_evens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># The intermediate &quot;Pythonic&quot; way using a List Comprehension</span>
+<span class="n">squared_evens_comp</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List Comprehension …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/comprehensions.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://shankartce.github.io/pynotes/context-managers.html"><h3 class="article-title">Context Managers</h3></a>
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">managed_resource</span><span class="p">(</span><span class="n">resource_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A custom context manager for handling a resource.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Acquiring resource: </span><span class="si">{</span><span class="n">resource_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">resource</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">resource_name</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;active&quot;</span><span class="p">}</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Hand the resource over to the &#39;with&#39; block</span>
+        <span class="k">yield</span> <span class="n">resource</span> 
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="c1"># This block always executes, even if an error occurs above</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/context-managers.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://shankartce.github.io/pynotes/decorators.html"><h3 class="article-title">Decorators</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -123,7 +183,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/generators.html"><h3 class="article-title">Generators</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -145,6 +205,39 @@
 
 
                 <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/generators.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="https://shankartce.github.io/pynotes/properties.html"><h3 class="article-title">Properties</h3></a>
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Temperature</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">celsius</span><span class="p">):</span>
+        <span class="c1"># We use an underscore to indicate this is an internal variable</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span> <span class="o">=</span> <span class="n">celsius</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The getter method.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span>
+
+    <span class="nd">@celsius</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The setter method, allowing for validation.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">273.15</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Temperature cannot …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/properties.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 

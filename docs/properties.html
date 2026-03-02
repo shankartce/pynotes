@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Properties</title>
+
+    <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://shankartce.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://shankartce.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://shankartce.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://shankartce.github.io/pynotes/properties.html" rel="bookmark"
+        title="Permalink to Properties">Properties</a></h3>
+    </header>
+
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Temperature</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">celsius</span><span class="p">):</span>
+        <span class="c1"># We use an underscore to indicate this is an internal variable</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span> <span class="o">=</span> <span class="n">celsius</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The getter method.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span>
+
+    <span class="nd">@celsius</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The setter method, allowing for validation.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">273.15</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Temperature cannot go below absolute zero.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fahrenheit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A derived property that computes its value on the fly.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span>
+
+<span class="c1"># Using the class</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Celsius: </span><span class="si">{</span><span class="n">temp</span><span class="o">.</span><span class="n">celsius</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Accessing like an attribute, not a method</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fahrenheit: </span><span class="si">{</span><span class="n">temp</span><span class="o">.</span><span class="n">fahrenheit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Attempting to set an invalid temperature will raise the ValueError</span>
+<span class="c1"># temp.celsius = -300</span>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p>
+<p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://shankartce.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://shankartce.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://shankartce.github.io/pynotes/category/asychronous-programming.html">Asychronous Programming</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/data-classes.html">Data Classes</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/descriptor-protocols.html">Descriptor Protocols</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/localmath.html">localmath</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/python-cricket.html">python-cricket</a></li>
+            <li><a href="https://shankartce.github.io/pynotes/category/typing-module.html">Typing Module</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/shankartce">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/shankarp369/">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by shankartce</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>

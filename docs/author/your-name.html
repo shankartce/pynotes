@@ -47,7 +47,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/addition.html"><h3 class="article-title">Addition</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -82,8 +82,38 @@
 
 
             <article>
+                <a href="https://shankartce.github.io/pynotes/arguments.html"><h3 class="article-title">Arguments</h3></a>
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">user_profile</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a user profile using unpacked arguments.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;User: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># *args is treated as a tuple of positional arguments</span>
+    <span class="k">if</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Additional skills:&quot;</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+
+    <span class="c1"># **kwargs is treated as a dictionary of keyword arguments</span>
+    <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/arguments.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://shankartce.github.io/pynotes/asynchronous-programming.html"><h3 class="article-title">Asynchronous Programming</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -125,8 +155,36 @@ Goodbye, World!
 
 
             <article>
+                <a href="https://shankartce.github.io/pynotes/comprehensions.html"><h3 class="article-title">Comprehensions</h3></a>
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1"># The traditional way to square even numbers</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">squared_evens</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">squared_evens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># The intermediate &quot;Pythonic&quot; way using a List Comprehension</span>
+<span class="n">squared_evens_comp</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List Comprehension …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/comprehensions.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://shankartce.github.io/pynotes/context-managers.html"><h3 class="article-title">Context Managers</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -158,7 +216,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/cricket-match.html"><h3 class="article-title">Cricket Match</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -211,7 +269,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/data-classes.html"><h3 class="article-title">Data Classes</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -252,7 +310,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/decorators.html"><h3 class="article-title">Decorators</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -285,7 +343,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/descriptor-protocols.html"><h3 class="article-title">Descriptor Protocols</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -327,7 +385,7 @@ Getting value
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/generators.html"><h3 class="article-title">Generators</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
+<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
 </h6>
 
 
@@ -352,84 +410,13 @@ Getting value
                 <hr  class="gradient"/>
             </article>
 
-        
-
-
-            <article>
-                <a href="https://shankartce.github.io/pynotes/multiply.html"><h3 class="article-title">Multiply</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">c</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="mf">21</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/localmath.html">localmath</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/multiply.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://shankartce.github.io/pynotes/python-type-hints.html"><h3 class="article-title">Python Type Hints</h3></a>
-<h6 class="subheader" title="2026-03-02T00:00:00-05:00">Mon 02 March 2026
-</h6>
-
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">sum_of_integers</span><span class="p">(</span><span class="n">numbers</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">sum_of_integers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>  <span class="c1"># Output: 6</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="mf">6</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
-    <span class="k">return</span> <span class="s2">&quot;Hello, Guest!&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">())</span>           <span class="c1"># Output: Hello, Guest!</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">))</span>    <span class="c1"># Output …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/typing-module.html">Typing Module</a>
-
-</p>
-
-
-
-                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/python-type-hints.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 1 of 1</h6>
+<h6 class="subheader">Page 1 of 2</h6>
 
 <p>
 
+        <a href="https://shankartce.github.io/pynotes/author/your-name2.html">Next &raquo;</a>
 </p>
 </div>
 
