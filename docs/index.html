@@ -47,7 +47,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/addition.html"><h3 class="article-title">Addition</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -83,7 +83,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/arguments.html"><h3 class="article-title">Arguments</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -113,7 +113,7 @@
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/asynchronous-programming.html"><h3 class="article-title">Asynchronous Programming</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -156,7 +156,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/comprehensions.html"><h3 class="article-title">Comprehensions</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -184,7 +184,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/context-managers.html"><h3 class="article-title">Context Managers</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -216,7 +216,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/cricket-match.html"><h3 class="article-title">Cricket Match</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -269,7 +269,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/data-classes.html"><h3 class="article-title">Data Classes</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -310,7 +310,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/decorators.html"><h3 class="article-title">Decorators</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -343,7 +343,7 @@ Goodbye, World!
 
             <article>
                 <a href="https://shankartce.github.io/pynotes/descriptor-protocols.html"><h3 class="article-title">Descriptor Protocols</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
@@ -384,29 +384,34 @@ Getting value
 
 
             <article>
-                <a href="https://shankartce.github.io/pynotes/generators.html"><h3 class="article-title">Generators</h3></a>
-<h6 class="subheader" title="2026-03-03T00:00:00-05:00">Tue 03 March 2026
+                <a href="https://shankartce.github.io/pynotes/exception-handling.html"><h3 class="article-title">Exception Handling</h3></a>
+<h6 class="subheader" title="2026-03-28T00:00:00-04:00">Sat 28 March 2026
 </h6>
 
 
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci_generator</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates Fibonacci numbers up to a specified limit.&quot;&quot;&quot;</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">a</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">safe_divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Cannot divide by zero.&quot;</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Inputs must be numbers.&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Result: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="c1"># Iterating through the generator</span>
-<span class="c1"># This uses very little memory, even if the limit was 1,000,000</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">fibonacci_generator …</span></code></pre></div><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
+<span class="nb">print</span><span class="p">(</span><span class="n">safe_divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">safe_divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">safe_divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p><p class="subheader">Category: <a href="https://shankartce.github.io/pynotes/category/python-concepts.html">python-concepts</a>
 
 </p>
 
 
 
-                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/generators.html">Read More</a>
+                <a class="button radius secondary small right" href="https://shankartce.github.io/pynotes/exception-handling.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
