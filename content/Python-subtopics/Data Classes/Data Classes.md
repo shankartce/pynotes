@@ -1,6 +1,6 @@
 ---
 title: Data Classes
-date: 2026-03-28
+date: 2026-04-15
 author: Your Name
 cell_count: 11
 score: 10
